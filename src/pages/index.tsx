@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from '@/styles/Home.module.css'
 import { Card } from '@/components/card'
-import { Flower } from '@/domain/Flower'
+import { Flower } from '@/domain/flower'
 
 const inter = Inter({ subsets: ['latin'] })
 

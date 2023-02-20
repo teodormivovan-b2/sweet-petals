@@ -1,4 +1,4 @@
-import { Flower } from "@/domain/Flower";
+import { Flower } from "@/domain/flower";
 import Image from 'next/image'
 
 export function Card(flower: Flower) {
