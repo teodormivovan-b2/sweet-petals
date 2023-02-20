@@ -14,8 +14,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-      </main>
+      <body className={styles.main}>
+        <header>
+          <Image src="company-icon.svg" alt="Logo of the company" width={16} height={16}/>
+          <h1>Sweet Petals</h1>
+        </header>
+      </body>
     </>
   )
 }
