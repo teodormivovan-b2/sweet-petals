@@ -7,10 +7,13 @@ import { useEffect, useState } from 'react'
 import { FlowerService } from '@/core/services/flowerService'
 import { apiFlowersRepository } from '@/core/infraestructure/flowerApiRepository'
 import { Header } from '@/components/header'
-const inter = Inter({ subsets: ['latin'] })
+import { Searchbar } from '@/components/searchbar'
+import { isSearchedFlower } from '@/core/services/flowerFilters'
 
 export default function Home() {
   const [flowers, setFlowers] = useState<Flower[]>([]);
+  const [filteredFlowers, setFilteredFlowers] = useState<Flower[]>(flowers);
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     const getFlowers = async () => {
@@ -20,6 +23,18 @@ export default function Home() {
 
     getFlowers();
   }, []);
+
+  useEffect(() => {
+    const filterFlowers = () => {
+      setFilteredFlowers(
+        flowers.filter(
+          (flower) => isSearchedFlower(flower, searchText)
+        )
+      )
+    };
+
+    filterFlowers();
+  }, [flowers, searchText]);
 
   return (
     <>
@@ -31,8 +46,9 @@ export default function Home() {
       </Head>
       <main>
         <Header />
+        <Searchbar setSearchText={setSearchText}/>
         <section className={styles.card__gallery}>
-        {flowers.map((flower, key) => {
+          {filteredFlowers.map((flower, key) => {
             return <Card key={key} {...flower} />;
           })}
         </section>
