@@ -1,5 +1,5 @@
-import { Flower } from "@/domain/flower";
-import { FlowerRepository } from "@/domain/flowerRepository";
+import { Flower } from '@/core/domain/flower';
+import { FlowerRepository } from '@/core/domain/flowerRepository';
 
 export const apiFlowersRepository: FlowerRepository = {
   getAll: async (): Promise<Flower[]> => {

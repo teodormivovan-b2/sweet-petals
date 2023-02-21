@@ -1,4 +1,4 @@
-import { Flower } from "@/domain/flower";
+import { Flower } from '@/core/domain/flower';
 
 
 export interface FlowerRepository {

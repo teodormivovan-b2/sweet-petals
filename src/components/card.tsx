@@ -1,4 +1,4 @@
-import { Flower } from "@/domain/flower"
+import { Flower } from '@/core/domain/flower'
 import styles from '@/styles/organisms/_card.module.css'
 import Image from 'next/image'
 

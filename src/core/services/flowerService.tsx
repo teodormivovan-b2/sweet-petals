@@ -1,4 +1,4 @@
-import { FlowerRepository } from "@/domain/flowerRepository";
+import { FlowerRepository } from '@/core/domain/flowerRepository';
 
 export class FlowerService {
   private flowersRepository: FlowerRepository;
