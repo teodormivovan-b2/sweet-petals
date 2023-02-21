@@ -1,0 +1,12 @@
+.card__image {
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.card {
+    text-align: center;
+}
+.card__title {
+    font-size: var(--text_h2);
+}

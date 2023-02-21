@@ -1,0 +1,15 @@
+.header__container{
+    display: flex;
+    width: 100%;
+    background-color: var(--blue);
+    color: #fff;
+    text-align: center;
+    padding: var(--space_mini);
+    border-bottom: 3px solid var(--dark_blue);
+    align-items: center;
+}
+.web__title {
+    font-size: var(--text_h1);
+    font-weight: var(--text_bold);
+    margin-left: var(--space_mini);
+}

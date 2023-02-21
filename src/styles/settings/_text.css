@@ -1,0 +1,12 @@
+:root {
+  --text_small: 12.64px;
+  --text_base: 16px;
+  --text_h4: 18px;
+  --text_h3: 22px;
+  --text_h2: 28px;
+  --text_h1: 40px;
+  
+  --text_light: 400;
+  --text_bold: 700;
+  --text_extra_bold: 800;
+}

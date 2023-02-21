@@ -1,0 +1,10 @@
+.card__gallery{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space_base);
+    color: #294C60;
+    margin: auto;
+    padding-top: var(--space_large);
+    padding-bottom: var(--space_large);
+    justify-content: center;
+}

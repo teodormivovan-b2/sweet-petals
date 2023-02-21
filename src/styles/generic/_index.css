@@ -1,0 +1,20 @@
+@import "../settings/_colors.css";
+@import "../settings/_spacing.css";
+@import "../settings/_text.css";
+
+* {
+	padding: 0;
+	margin: 0;
+	border: none;
+	box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(
+    160deg,
+    var(--pink) 5%,
+    var(--yellow) 60%,
+    var(--pink) 100%
+  );
+  background-attachment: fixed;
+}
