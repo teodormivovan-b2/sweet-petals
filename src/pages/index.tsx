@@ -6,7 +6,6 @@ import { FlowerService } from '@/core/services/flowerService'
 import { apiFlowersRepository } from '@/core/infraestructure/flowerApiRepository'
 import { Searchbar } from '@/components/searchbar'
 import { isSearchedFlower } from '@/core/services/flowerFilters'
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Layout from '@/components/layout'
 
@@ -14,7 +13,6 @@ export default function Home() {
   const [flowers, setFlowers] = useState<Flower[]>([]);
   const [filteredFlowers, setFilteredFlowers] = useState<Flower[]>(flowers);
   const [searchText, setSearchText] = useState("");
-  const router = useRouter();
 
   useEffect(() => {
     const getFlowers = async () => {
