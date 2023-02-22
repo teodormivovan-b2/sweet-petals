@@ -8,3 +8,6 @@
     padding-bottom: var(--space_large);
     justify-content: center;
 }
+.card__gallery a {
+    text-decoration: none;;
+}

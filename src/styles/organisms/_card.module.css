@@ -10,3 +10,12 @@
 .card__title {
     font-size: var(--text_h2);
 }
+.card__small_detail {
+    font-size: var(--text_small);
+    font-style: italic;
+    margin-top: var(--space_xtiny);
+}
+.card__detail{
+    font-size:  var(--text_base);
+    margin-top: var(--space_xtiny);
+}

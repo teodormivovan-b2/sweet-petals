@@ -21,5 +21,4 @@
     display: flex;
     justify-content: flex-end;
     margin: var(--space_tiny);
-    width: 100%;
 }

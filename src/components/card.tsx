@@ -13,6 +13,8 @@ export function Card(flower: Flower) {
           height={128}
         />
         <h2 className={styles.card__title}>{flower.name}</h2>
+        <p className={styles.card__small_detail}>{flower.binomialName}</p>
+        <p className={styles.card__detail}>{flower.price}€</p>
       </div>
     );
   }
