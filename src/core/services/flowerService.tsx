@@ -10,4 +10,8 @@ export class FlowerService {
   getAll() {
     return this.flowersRepository.getAll();
   }
+  
+  getById(id:string){
+    return this.flowersRepository.getById(id);
+  }
 }

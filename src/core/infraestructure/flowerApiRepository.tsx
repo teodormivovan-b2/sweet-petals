@@ -10,5 +10,11 @@ export const apiFlowersRepository: FlowerRepository = {
     } catch (error) {
       return [];
     }
+  },
+
+  getById: async(id:string): Promise<Flower> => {
+    const response = await fetch(`https://dulces-petalos.herokuapp.com/api/product/${id}`);
+    const flower: Flower = await response.json();
+    return flower;
   }
 }
