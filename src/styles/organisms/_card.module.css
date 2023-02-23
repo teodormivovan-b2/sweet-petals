@@ -1,21 +1,23 @@
 .card__image {
-    width: 12rem;
-    height: 12rem;
-    object-fit: cover;
-    border-radius: 15px;
+  width: 12rem;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 15px;
 }
 .card {
-    text-align: center;
+  text-align: center;
+  width: 20%;
+  min-width: 14rem;
 }
 .card__title {
-    font-size: var(--text_h2);
+  font-size: var(--text_h2);
 }
 .card__small_detail {
-    font-size: var(--text_small);
-    font-style: italic;
-    margin-top: var(--space_xtiny);
+  font-size: var(--text_small);
+  font-style: italic;
+  margin-top: var(--space_xtiny);
 }
-.card__detail{
-    font-size:  var(--text_base);
-    margin-top: var(--space_xtiny);
+.card__detail {
+  font-size: var(--text_base);
+  margin-top: var(--space_xtiny);
 }

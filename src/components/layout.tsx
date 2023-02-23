@@ -2,14 +2,14 @@ import { ReactNode } from "react";
 import { Header } from "./header";
 
 interface LayoutProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
-export default function Layout({ children } : LayoutProps): JSX.Element {
+export default function Layout({ children }: LayoutProps): JSX.Element {
   return (
     <>
       <Header />
       <main>{children}</main>
     </>
-  )
+  );
 }

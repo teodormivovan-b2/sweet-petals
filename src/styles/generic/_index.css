@@ -1,12 +1,13 @@
 @import "../settings/_colors.css";
 @import "../settings/_spacing.css";
 @import "../settings/_text.css";
+@import "../settings/_media.css";
 
 * {
-	padding: 0;
-	margin: 0;
-	border: none;
-	box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  border: none;
+  box-sizing: border-box;
 }
 
 body {
@@ -17,4 +18,9 @@ body {
     var(--pink) 100%
   );
   background-attachment: fixed;
+}
+
+main {
+  max-width: var(--desktop_max);
+  margin: 0 auto;
 }
