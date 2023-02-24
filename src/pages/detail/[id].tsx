@@ -32,39 +32,42 @@ export default function Detail() {
 
   return (
     <Layout>
-      <div className={styles.details__return__container}>
-        <button
-          className={styles.details__return}
-          onClick={() => router.back()}
-        >
-          Volver
-        </button>
-      </div>
       <div className={styles.details__container}>
-        <div className={styles.details__image__container}>
-          <Image
-            src={flower.imgUrl}
-            alt={flower.name}
-            className={styles.details__image}
-            fill
-            placeholder="blur"
-            blurDataURL={flower.imgUrl}
-          />
+        <div className={styles.details__return__container}>
+          <button
+            className={styles.details__return}
+            onClick={() => router.back()}
+          >
+            Volver
+          </button>
         </div>
-        <dl className={styles.details__data}>
-          <dt>Nombre:</dt>
-          <dd>{flower.name}</dd>
-          <dt>Nombre científico:</dt>
-          <dd>{flower.binomialName}</dd>
-          <dt>Precio:</dt>
-          <dd>{flower.price}</dd>
-          <dt>Riegos por semana:</dt>
-          <dd>{flower.wateringsPerWeek}</dd>
-          <dt>Fertizante recomendado:</dt>
-          <dd>{spanishFertilizer(flower)}</dd>
-          <dt>Altura:</dt>
-          <dd>{flower.heightInCm}</dd>
-        </dl>
+        <div className={styles.flower__container}>
+          <div className={styles.details__image__container}>
+            <Image
+              src={flower.imgUrl}
+              alt={flower.name}
+              className={styles.details__image}
+              width={320}
+              height={320}
+              placeholder="blur"
+              blurDataURL={flower.imgUrl}
+            />
+          </div>
+          <dl className={styles.details__data}>
+            <dt>Nombre:</dt>
+            <dd>{flower.name}</dd>
+            <dt>Nombre científico:</dt>
+            <dd>{flower.binomialName}</dd>
+            <dt>Precio:</dt>
+            <dd>{flower.price}</dd>
+            <dt>Riegos por semana:</dt>
+            <dd>{flower.wateringsPerWeek}</dd>
+            <dt>Fertizante recomendado:</dt>
+            <dd>{spanishFertilizer(flower)}</dd>
+            <dt>Altura:</dt>
+            <dd>{flower.heightInCm}</dd>
+          </dl>
+        </div>
       </div>
     </Layout>
   );
