@@ -13,33 +13,41 @@ describe("Home page", () => {
     });
 
     expect(heading).toBeInTheDocument();
-  }),
-    it("Searchbox filters by name", async () => {
-      jest
-        .spyOn(apiFlowersRepository, "getAll")
-        .mockResolvedValue([
-          FlowerBuilder().build(),
-          FlowerBuilder().withName("Rose").build(),
-        ]);
-      render(<Home />);
+  });
+  it("Searchbox filters by name", async () => {
+    jest
+      .spyOn(apiFlowersRepository, "getAll")
+      .mockResolvedValue([
+        FlowerBuilder().build(),
+        FlowerBuilder().withName("Rose").build(),
+      ]);
+    render(<Home />);
 
-      const searchbar = await screen.findByRole("searchbox");
-      fireEvent.change(searchbar, { target: { value: "rose" } });
-      expect(await screen.findByAltText("Rose")).toBeInTheDocument();
-      expect(screen.queryByAltText("irrelevantName")).not.toBeInTheDocument();
-    }),
-    it("Searchbox filters by binomialname", async () => {
-      jest
-        .spyOn(apiFlowersRepository, "getAll")
-        .mockResolvedValue([
-          FlowerBuilder().build(),
-          FlowerBuilder().withName("Rose").withBinomialName("Blue").build(),
-        ]);
-      render(<Home />);
+    const searchbar = await screen.findByRole("searchbox");
+    fireEvent.change(searchbar, { target: { value: "rose" } });
+    expect(await screen.findByAltText("Rose")).toBeInTheDocument();
+    expect(screen.queryByAltText("irrelevantName")).not.toBeInTheDocument();
+  });
+  it("Searchbox filters by binomialname", async () => {
+    jest
+      .spyOn(apiFlowersRepository, "getAll")
+      .mockResolvedValue([
+        FlowerBuilder().build(),
+        FlowerBuilder().withName("Rose").withBinomialName("Blue").build(),
+      ]);
+    render(<Home />);
 
-      const searchbar = await screen.findByRole("searchbox");
-      fireEvent.change(searchbar, { target: { value: "blue" } });
-      expect(await screen.findByAltText("Rose")).toBeInTheDocument();
-      expect(screen.queryByAltText("irrelevantName")).not.toBeInTheDocument();
-    });
+    const searchbar = await screen.findByRole("searchbox");
+    fireEvent.change(searchbar, { target: { value: "blue" } });
+    expect(await screen.findByAltText("Rose")).toBeInTheDocument();
+    expect(screen.queryByAltText("irrelevantName")).not.toBeInTheDocument();
+  });
+  it("Checks the url is correct.", async () => {
+    jest
+      .spyOn(apiFlowersRepository, "getAll")
+      .mockResolvedValue([FlowerBuilder().withName("Rose").build()]);
+    render(<Home />);
+    const link = await screen.findByRole("link");
+    expect(link.getAttribute("href")).toBe("/detail/irrelevantId");
+  });
 });
